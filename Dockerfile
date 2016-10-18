@@ -1,7 +1,7 @@
 FROM mysql:5.7
 MAINTAINER douglasralmeida <douglasralmeida@live.com>
 
-ENV MYSQL_ROOT_PASSWORD=$SQL_PASSWORD
+ENV MYSQL_ROOT_PASSWORD=senhateste
 
 EXPOSE 3306
 

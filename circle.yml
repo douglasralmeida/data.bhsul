@@ -11,7 +11,7 @@ test:
   override:
     - docker run -d --name databhsul -p 33060:3306 douglasralmeida/portalbhsul; sleep 10
     - docker logs databhsul
-    - mysql --user=root --password=$SQL_PASSWORD --port=33060 --execute="SELECT User, Host FROM mysql.user"
+    - mysql --user=root --password=senhateste--port=33060 --execute="SELECT User, Host FROM mysql.user"
     - mysql --user=usuario_simples --password=$SQL_PASSWORD --port=33060 --execute="SELECT * FROM bhsul_gestaosite"
 
 deployment:

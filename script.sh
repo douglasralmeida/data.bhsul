@@ -1,5 +1,5 @@
 export VAR1=$SQL_PASSWORD
 MYVARS='$VAR1'
 
-envsubst "$MYVARS" <usuarios.sql >_usuarios.sql
-rm usuarios.sql
+envsubst "$MYVARS" </docker-entrypoint-initdb.d/usuarios.sql >/docker-entrypoint-initdb.d/_usuarios.sql
+rm /docker-entrypoint-initdb.d/usuarios.sql

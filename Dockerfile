@@ -5,7 +5,7 @@ ENV MYSQL_ROOT_PASSWORD=senhateste
 
 EXPOSE 3306
 
-COPY usuarios.sql /docker-entrypoint-initdb.d
+COPY _usuarios.sql /docker-entrypoint-initdb.d
 COPY bhsul.gestaosite.sql /docker-entrypoint-initdb.d
 
 RUN sed -i -- 's/PASSWORD_REPLACE/$SQL_PASSWORD/g' /docker-entrypoint-initdb.d/*

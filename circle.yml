@@ -11,8 +11,8 @@ test:
   override:
     - docker run -d --name databhsul -e MYSQL_ROOT_PASSWORD=senhateste -p 80:3306 douglasralmeida/data.bhsul; sleep 10
     - docker logs databhsul
-    - mysql --user=root --password=senhateste --port=80 --execute="SELECT User, Host FROM mysql.user"
-    - mysql --user=usuario_simples --password="$SQL_PASSWORD" --port=80 --execute="SELECT * FROM bhsul_gestaosite"
+    - mysql -h localhost --user=root --password=senhateste --port=80 --execute="SELECT User, Host FROM mysql.user"
+    - mysql -h localhost --user=usuario_simples --password="$SQL_PASSWORD" --port=80 --execute="SELECT * FROM bhsul_gestaosite"
 
 deployment:
   hub:

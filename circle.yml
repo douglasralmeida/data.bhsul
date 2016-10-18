@@ -1,0 +1,19 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker build --name databhsul -t douglasralmeida/data.bhsul .
+
+test: 
+  override:
+    - docker logs databhsul
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e douglasralmeida@live.com -u douglasralmeida -p $DOCKER_PASS
+      - docker push douglasralmeida/data.bhsul

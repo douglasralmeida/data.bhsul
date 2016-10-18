@@ -1,6 +1,7 @@
 machine:
   services:
     - docker
+    - mysql
 
 dependencies:
   override:
@@ -11,6 +12,8 @@ test:
   override:
     - docker run -d --name databhsul -p 3306:3306 douglasralmeida/portalbhsul; sleep 10
     - docker logs databhsul
+    - mysql -u root -p $SQL_PASSWORD --execute="SELECT User, Host FROM mysql.user"
+    - mysql -u usuario_simples -p $SQL_PASSWORD --execute="SELECT * FROM bhsul_gestaosite"
 
 deployment:
   hub:

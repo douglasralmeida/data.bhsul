@@ -13,7 +13,7 @@ test:
     - docker logs databhsul
     - mysql -h localhost -u root --password=senhateste --port=80 --protocol=TCP --execute="SELECT User, Host FROM mysql.user"
     - mysql -h localhost -u usuario_simples --password=$SQL_PASSWORD --port=80 --protocol=TCP --execute="SELECT * FROM bhsul_gestaosite"
-    - sed -i 's/SQL_PASSWORD/${SQL_PASSWORD}/g' _usuarios.sql
+    - sed -i 's/SQL_PASSWORD/$SQL_PASSWORD/g' _usuarios.sql
     - tail _usuarios.sql
 
 deployment:

@@ -12,7 +12,8 @@ test:
     - docker run -d --name databhsul -e MYSQL_ROOT_PASSWORD=senhateste -p 80:3306 douglasralmeida/data.bhsul; sleep 10
     - docker logs databhsul
     - mysql -h localhost -u root --password=senhateste --port=80 --protocol=TCP --execute="SELECT User, Host FROM mysql.user"
-    - mysql -h localhost -u usuario_simples --password="$SQL_PASSWORD" --port=80 --protocol=TCP --execute="SELECT * FROM bhsul_gestaosite"
+    - mysql -h localhost -u usuario_simples --password=$SQL_PASSWORD --port=80 --protocol=TCP --execute="SELECT * FROM bhsul_gestaosite"
+    - echo $SQL_PASSWORD
 
 deployment:
   hub:

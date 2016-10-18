@@ -5,10 +5,11 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build --name databhsul -t douglasralmeida/data.bhsul .
+    - docker build -t douglasralmeida/data.bhsul .
 
 test: 
   override:
+    - docker run -d --name databhsul -p 3306:3306 douglasralmeida/portalbhsul; sleep 10
     - docker logs databhsul
 
 deployment:

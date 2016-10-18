@@ -5,4 +5,4 @@ COPY script.sh /docker-entrypoint-initdb.d
 COPY usuarios.sql /docker-entrypoint-initdb.d
 COPY bhsul.gestaosite.sql /docker-entrypoint-initdb.d
 
-ENTRYPOINT ["/docker-entrypoint-initdb.d/script.sh"]
+RUN /docker-entrypoint-initdb.d/script.sh

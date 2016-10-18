@@ -1,1 +1,1 @@
-eval "echo \"$(cat /docker-entrypoint-initdb.d/_usuarios.sql)\""
+eval "echo \"$(cat /docker-entrypoint-initdb.d/usuarios.sql)\""

@@ -1,8 +1,6 @@
 FROM mysql:5.7
 MAINTAINER douglasralmeida <douglasralmeida@live.com>
 
-ENV MYSQL_ROOT_PASSWORD=senhateste
-
 EXPOSE 3306
 
 COPY _usuarios.sql /docker-entrypoint-initdb.d

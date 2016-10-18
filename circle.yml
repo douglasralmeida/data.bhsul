@@ -5,6 +5,8 @@ machine:
 dependencies:
   override:
     - docker info
+    - envsubst <usuarios.sql>_usuarios.sql
+    - rm usuarios.sql
     - docker build -t douglasralmeida/data.bhsul .
 
 test: 

@@ -7,5 +7,3 @@ COPY _usuarios.sql /docker-entrypoint-initdb.d
 COPY bhsul.gestaosite.sql /docker-entrypoint-initdb.d
 
 RUN sed -i -- 's/PASSWORD_REPLACE/$SQL_PASSWORD/g' /docker-entrypoint-initdb.d/*
-
-CMD ["mysqld"]

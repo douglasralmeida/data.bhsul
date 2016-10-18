@@ -1,1 +1,1 @@
-CREATE USER 'usuario_simples'@'%' IDENTIFIED WITH mysql_native_password BY 'SQL_PASSWORD';
+CREATE USER 'usuario_simples'@'%' IDENTIFIED WITH mysql_native_password BY '$SQL_PASSWORD';
